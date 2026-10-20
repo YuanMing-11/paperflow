@@ -1,0 +1,390 @@
+{
+  "scope": "Read-only figure/text placement and readability audit of three supplied PDFs. Screen scrolling used as working reading context; no facing-page print assumption.",
+  "generated_at": "2026-10-20T09:09:44.612694+00:00",
+  "tool": "paper-layout-audit audit_pdf.py and PyMuPDF",
+  "pymupdf_version": "1.28.0",
+  "documents": [
+    {
+      "filename": "03_end_matter_exception.pdf",
+      "sha256": "b3f382406ebfc0ead0cf1856fbcf2ce5242bf1bc23854989b30a727fe4552f14",
+      "pages": 4,
+      "physical_pages_visually_checked": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "visible_footer_page_labels": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "pdf_page_label_metadata": [],
+      "profile": {
+        "far_reference_page_gap": 2,
+        "float_policy": "end_matter",
+        "minimum_font_pt": 7,
+        "minimum_body_font_ratio": 0.65,
+        "sparse_page_max_occupied_fraction": 0.12,
+        "page_edge_tolerance_pt": 0.5,
+        "render_dpi": 110,
+        "exempt_pages": []
+      },
+      "render_dpi": [
+        110,
+        180
+      ],
+      "detail_checked_pages": [
+        4
+      ],
+      "text_available": true,
+      "source_available": false,
+      "build_log_available": false,
+      "links_per_page": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "toc_count": 0,
+      "baseline_hash_unchanged": true
+    },
+    {
+      "filename": "05_reference_roles.pdf",
+      "sha256": "37c9355faa7e1eca7e02e2355f71b26e799829b84fef4f24c1f72c95fbb75d6b",
+      "pages": 3,
+      "physical_pages_visually_checked": [
+        1,
+        2,
+        3
+      ],
+      "visible_footer_page_labels": [
+        1,
+        2,
+        3
+      ],
+      "pdf_page_label_metadata": [],
+      "profile": {
+        "far_reference_page_gap": 2,
+        "float_policy": "inline",
+        "minimum_font_pt": 7,
+        "minimum_body_font_ratio": 0.65,
+        "sparse_page_max_occupied_fraction": 0.12,
+        "page_edge_tolerance_pt": 0.5,
+        "render_dpi": 110,
+        "exempt_pages": []
+      },
+      "render_dpi": [
+        110,
+        180
+      ],
+      "detail_checked_pages": [
+        3
+      ],
+      "text_available": true,
+      "source_available": false,
+      "build_log_available": false,
+      "links_per_page": [
+        0,
+        0,
+        0
+      ],
+      "toc_count": 0,
+      "baseline_hash_unchanged": true
+    },
+    {
+      "filename": "10_image_only.pdf",
+      "sha256": "c9bb8ebc595036e9b2487c1c0ef1d0126eadf8172e180d86e916e27afede7585",
+      "pages": 1,
+      "physical_pages_visually_checked": [
+        1
+      ],
+      "visible_footer_page_labels": [
+        1
+      ],
+      "pdf_page_label_metadata": [],
+      "profile": {
+        "far_reference_page_gap": 2,
+        "float_policy": "inline",
+        "minimum_font_pt": 7,
+        "minimum_body_font_ratio": 0.65,
+        "sparse_page_max_occupied_fraction": 0.12,
+        "page_edge_tolerance_pt": 0.5,
+        "render_dpi": 110,
+        "exempt_pages": []
+      },
+      "render_dpi": [
+        110,
+        180
+      ],
+      "detail_checked_pages": [
+        1
+      ],
+      "text_available": false,
+      "source_available": false,
+      "build_log_available": false,
+      "links_per_page": [
+        0
+      ],
+      "toc_count": 0,
+      "baseline_hash_unchanged": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "03-NAV-06-navigation",
+      "status": "confirmed",
+      "severity": "minor",
+      "finding_type": "optional_improvement",
+      "object": "Figure 1 navigation",
+      "physical_pages": [
+        1,
+        4
+      ],
+      "printed_labels": [
+        "1",
+        "4"
+      ],
+      "evidence": {
+        "quote": "The rise is concentrated in the last two measurements (Figure 1).",
+        "reference_page": 1,
+        "caption_page": 4,
+        "page_gap": 3,
+        "link_annotations": 0,
+        "visual_checked": true,
+        "source_checked": false
+      },
+      "impact": "People reading on screen must manually locate the mandated end-matter figure and return to the explanatory passage.",
+      "repair": "Keep Figure 1 after the text. If supported by the submission workflow, add an internal link from the p.1 reference to p.4 and a return link or clear page pointer from the caption.",
+      "confidence": "high",
+      "verification": "Recommendation only; no changes made. Navigation absence confirmed through PDF link inspection."
+    },
+    {
+      "id": "05-PAG-03-spacing",
+      "status": "confirmed",
+      "severity": "minor",
+      "finding_type": "optional_improvement",
+      "object": "Whitespace before Figure 1",
+      "physical_pages": [
+        3
+      ],
+      "printed_labels": [
+        "3"
+      ],
+      "evidence": {
+        "quote": "Inspecting the bend is essential to this comparison.",
+        "explanatory_paragraph_bbox": [
+          54,
+          98.175,
+          522.27,
+          128.289
+        ],
+        "visually_matched_figure_background_bbox": [
+          74,
+          222,
+          524,
+          442
+        ],
+        "gap_pt": 93.711,
+        "visual_checked": true,
+        "source_checked": false
+      },
+      "impact": "The generous gap lengthens the same-page eye movement, but no intervening body passage or page turn interrupts the figure explanation.",
+      "repair": "If layout discretion permits, modestly reduce the paragraph-to-figure gap while keeping the whole figure and caption on p.3. Retain the early roadmap reference.",
+      "confidence": "medium",
+      "verification": "Recommendation only; no changes made. The gap is measured; its severity is a visual judgment, not a venue rule."
+    },
+    {
+      "id": "10-ACC-02-text-layer",
+      "status": "confirmed",
+      "severity": "major",
+      "finding_type": "digital_readability",
+      "object": "Entire page",
+      "physical_pages": [
+        1
+      ],
+      "printed_labels": [
+        "1"
+      ],
+      "evidence": {
+        "quote": "This entire page will be embedded as one image. Text extraction is unavailable.",
+        "quote_method": "manual visual transcription",
+        "text_span_count": 0,
+        "image_count": 1,
+        "image_pixels": [
+          980,
+          1268
+        ],
+        "image_placement_pt": [
+          0,
+          0,
+          612,
+          792
+        ],
+        "effective_dpi": [
+          115.29411764705883,
+          115.27272727272727
+        ],
+        "visual_checked": true,
+        "source_checked": false
+      },
+      "impact": "Text cannot be searched/copied through the PDF text layer; automated references and exact font measurements are unavailable. Fine labels become softer at enlargement. Visible figure and caption remain readable.",
+      "repair": "Prefer a source export retaining text and vector chart content when permitted. If the page must remain an image, a carefully proofread OCR text layer can restore text search while preserving the visible page; it does not restore vector sharpness or prove accessible structure.",
+      "confidence": "high",
+      "verification": "Recommendation only; no OCR, source reconstruction, or PDF modification performed."
+    }
+  ],
+  "exemptions_and_dismissed_candidates": [
+    {
+      "file": "03_end_matter_exception.pdf",
+      "id": "03-NAV-01-end-matter",
+      "status": "exempted",
+      "physical_pages": [
+        1,
+        4
+      ],
+      "page_gap": 3,
+      "quote": "Submission policy for this fixture: all figures must appear after the text. A final typeset reading copy will place them near their citations.",
+      "decision": "The current submission should retain Figure 1 on its end-matter page. The distant reference is measured but is not a placement defect. The policy only promises near-citation placement for a later typeset copy."
+    },
+    {
+      "file": "05_reference_roles.pdf",
+      "id": "05-NAV-01-roadmap",
+      "status": "dismissed_candidate",
+      "physical_pages": [
+        1,
+        3
+      ],
+      "page_gap": 2,
+      "quote": "The paper introduces the acquisition protocol, then summarizes the response in Figure 1, and finally describes the controls.",
+      "decision": "This is an orientation/roadmap reference. The interpretive passage is on p.3 with the figure, gap 0. Moving the figure to p.1 would degrade the more important association."
+    }
+  ],
+  "reference_ledger": [
+    {
+      "file": "03_end_matter_exception.pdf",
+      "object": "Figure 1",
+      "caption_page": 4,
+      "mentions": [
+        {
+          "page": 1,
+          "role": "interpretation_and_first_body_mention",
+          "gap": 3
+        },
+        {
+          "page": 4,
+          "role": "identification_note_not_interpretation",
+          "gap": 0
+        }
+      ],
+      "decision": "retain end matter; optional navigation"
+    },
+    {
+      "file": "05_reference_roles.pdf",
+      "object": "Figure 1",
+      "caption_page": 3,
+      "mentions": [
+        {
+          "page": 1,
+          "role": "orientation_roadmap",
+          "gap": 2
+        },
+        {
+          "page": 3,
+          "role": "interpretation",
+          "gap": 0
+        }
+      ],
+      "decision": "retain on p.3; optional same-page spacing"
+    },
+    {
+      "file": "10_image_only.pdf",
+      "object": "Figure 1",
+      "caption_page": 1,
+      "mentions": [
+        {
+          "page": 1,
+          "role": "interpretation",
+          "gap": 0,
+          "evidence_mode": "manual_visual"
+        }
+      ],
+      "decision": "no confirmed proximity defect; preserve relationship and improve export if allowed"
+    }
+  ],
+  "coverage": [
+    {
+      "family": "NAV-01/02/03/04/05",
+      "status": "checked",
+      "evidence": "All 8 rendered pages; all three visible Figure 1 captions and their body mentions manually reconciled; no caption split or ambiguous numbering seen. Image-only entries transcribed manually."
+    },
+    {
+      "family": "NAV-06",
+      "status": "checked",
+      "evidence": "PyMuPDF get_links/get_toc: no link annotations or bookmarks in any input; therefore no destination tests were possible."
+    },
+    {
+      "family": "PAG-01/02/03/04/05/06",
+      "status": "checked",
+      "evidence": "All pages scanned for crop/collision/isolated headings/page rhythm; 612x792 pt pages, sequential visible footer numbers; no confirmed clipping/collision. Whitespace evaluated in context."
+    },
+    {
+      "family": "TYP-01/02/03/04/05, FIG-01/03/04/05/06/08, CAP-01/02",
+      "status": "partially_checked",
+      "evidence": "All rendered figures and nearby text visually checked; 03/05 vector-text body 11 pt, figure labels 9 pt, captions 9.5 pt. 10 font sizes unavailable. No missing-glyph/caption collision seen; original chart data and source unavailable."
+    },
+    {
+      "family": "FIG-02",
+      "status": "not_applicable",
+      "evidence": "One unpanelled line chart in each document."
+    },
+    {
+      "family": "FIG-07",
+      "status": "not_checked",
+      "evidence": "Original data/figure source unavailable; completeness of series, axis range, or export preservation cannot be established."
+    },
+    {
+      "family": "TAB/EQN/REF-02/REF-03",
+      "status": "not_applicable",
+      "evidence": "No tables, displayed equations, bibliography, or footnotes visible in these 8 pages."
+    },
+    {
+      "family": "REF-01",
+      "status": "partially_checked",
+      "evidence": "Visible figure numbers matched; undefined source labels/fields cannot be audited without source/build logs."
+    },
+    {
+      "family": "ACC-01/04",
+      "status": "partially_checked",
+      "evidence": "Single series uses a line and point markers, with no series distinction solely through color; rendered labels visually checked. No formal contrast or color-vision validation."
+    },
+    {
+      "family": "ACC-02",
+      "status": "partially_checked",
+      "evidence": "Text extraction checked: 03 and 05 extractable, 10 entirely image-only. Language metadata and description quality not audited."
+    },
+    {
+      "family": "ACC-03/CAP-03",
+      "status": "not_checked",
+      "evidence": "No tagged-PDF, alternative-description, assistive-technology reading-order, or PDF/UA/WCAG validation performed."
+    },
+    {
+      "family": "DOC-01/02/03/04",
+      "status": "partially_checked",
+      "evidence": "03 p.1 internal submission policy applied; 05/10 contain no explicit venue rules. No named venue or external standard checked. Readable PDFs, hashes/page counts recorded. Anonymity/compliance beyond stated instructions out of scope."
+    },
+    {
+      "family": "REG-01/02",
+      "status": "not_applicable",
+      "evidence": "Read-only audit; no rebuilt version. End-of-audit input hashes match the baselines."
+    }
+  ],
+  "changes": [],
+  "limitations": [
+    "No editable sources, build logs, original chart data, OCR, or accessibility validator.",
+    "Rendered inspection does not establish scientific correctness or submission compliance beyond the explicit in-file rule.",
+    "Zero helper findings is never treated as a passed audit.",
+    "Display renders support visual judgment; a physical print proof was not performed."
+  ]
+}

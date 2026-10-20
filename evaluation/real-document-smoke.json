@@ -1,0 +1,22 @@
+{
+  "source_url": "https://arxiv.org/pdf/2602.16895v1",
+  "document_sha256": "f75eff9e3692a12dd04b3bb84240466ee4abb95d3462ffcf205ae7521f0c8e78",
+  "page_count": 40,
+  "caption_candidates": 28,
+  "reference_candidates": 48,
+  "candidate_counts": {
+    "reference_caption_page_gap": 21,
+    "unresolved_reference_candidate": 1,
+    "ambiguous_reference_match": 5,
+    "small_text_candidate": 206
+  },
+  "visually_spot_checked_pages": [
+    10,
+    19,
+    29,
+    32
+  ],
+  "full_visual_audit": false,
+  "confirmed_defect_count": null,
+  "engine_sha256": "82c85172ca805395473b315d85edfe944a3a39283e4c5bdd9f5e687bb65db068"
+}

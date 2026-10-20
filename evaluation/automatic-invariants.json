@@ -1,0 +1,1014 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-20T09:15:42.661782+00:00",
+  "auditor_path": "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+  "auditor_sha256": "82c85172ca805395473b315d85edfe944a3a39283e4c5bdd9f5e687bb65db068",
+  "gold_sha256": "bddd91d1ec0bb9d171424b7293b7c485aecd88b479c76aa48437e456f22d46b2",
+  "method": "Black-box subprocess runs; immutable fixture observations supply expected values. No implementation import.",
+  "interpretation": "Automatic invariant success does not mean the gold's semantic or visual review behaviors passed.",
+  "cases": [
+    {
+      "case_id": "01_near_vector",
+      "fixture_sha256": "d49b21096a1f66a988df278f518f11c968f0b47fe32c002a80914810e8a1d5ed",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/01_near_vector.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/01_near_vector"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 1
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "vector_figure_1_caption_found",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "zero_raster_images_preserved",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "vector_geometry_preserved",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "local_reference_gap_zero",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_distant_reference_warning",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Recognize a real Figure 1 although no embedded raster image exists.",
+          "Do not flag its citation as remotely placed; inspect the nearby vector plot and caption."
+        ],
+        "forbidden_claims_from_gold": [
+          "Raster-image count of zero means the document has no figure.",
+          "The chart is scientifically correct because its layout is readable."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/01_near_vector/report.json"
+    },
+    {
+      "case_id": "02_far_essential",
+      "fixture_sha256": "9ac5cd07ebd4f5e6f4f7ad1c87b1c8d45bb4bfdcaf0ab4fae3e7253f2abb6b44",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/02_far_essential.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/02_far_essential"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 4
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "far_reference_retained",
+          "status": "pass",
+          "observed": 1
+        },
+        {
+          "check": "measured_gap_is_three",
+          "status": "pass",
+          "observed": 3
+        },
+        {
+          "check": "caption_is_page_four",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "gap_is_flagged_as_review_candidate",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Report Figure 1 at physical page 4 and its essential interpreting paragraph at physical page 1.",
+          "Treat three pages of navigation as a concrete locality review candidate; propose a nearby float only after checking constraints."
+        ],
+        "forbidden_claims_from_gold": [
+          "An arbitrary three-page threshold establishes measured reader confusion.",
+          "A source edit was performed when only the PDF was supplied."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/02_far_essential/report.json"
+    },
+    {
+      "case_id": "03_end_matter_exception",
+      "fixture_sha256": "6060da50370ac55ee7c372a9cb262b63b50fbf0a8083c85e20291c78b4b0cec8",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/03_end_matter_exception.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/03_end_matter_exception",
+        "--profile",
+        "<workspace>/work/paper-layout-audit/profiles/end-matter.json"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 4
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "far_reference_retained",
+          "status": "pass",
+          "observed": 1
+        },
+        {
+          "check": "measured_gap_is_three",
+          "status": "pass",
+          "observed": 3
+        },
+        {
+          "check": "caption_is_page_four",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "declared_end_matter_profile_respected",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "end_matter_proximity_warning_exempt",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "measured_distance_kept_with_exemption",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Expose the same measured gap as 02_far_essential.",
+          "Honor the explicit submission policy requiring end-matter figures; do not call this a mandatory placement violation.",
+          "A suggestion for an additional reading copy is permissible, but no forced relocation."
+        ],
+        "forbidden_claims_from_gold": [
+          "All figures farther than one page must be moved.",
+          "A manuscript-layout rule overrides a declared submission format."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/03_end_matter_exception/report.json"
+    },
+    {
+      "case_id": "04_figure_directory",
+      "fixture_sha256": "e221e1eb48b29bb982d40d397903f01a4ab29146c5aced62b5a644fed68de5b7",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/04_figure_directory.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/04_figure_directory"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 3
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "directory_not_body_reference",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "directory_not_extra_caption",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "real_caption_and_reference_local",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Treat page 1 as a navigational list, not the first substantive reference.",
+          "Pair the actual chart caption on page 3 with nearby body prose on page 3.",
+          "If the extractor cannot disambiguate the list entry, mark it ambiguous rather than assert a two-page locality fault."
+        ],
+        "forbidden_claims_from_gold": [
+          "The list entry is definitely a second Figure 1 caption.",
+          "The first text match always defines the reference location."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/04_figure_directory/report.json"
+    },
+    {
+      "case_id": "05_reference_roles",
+      "fixture_sha256": "b124a3a68181e980b23808592740c67f3ca450a506dd8f0891ac073c8c5aa824",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/05_reference_roles.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/05_reference_roles"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 3
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "both_mentions_retained",
+          "status": "pass",
+          "observed": [
+            1,
+            3
+          ]
+        },
+        {
+          "check": "lexical_distances_kept_separate",
+          "status": "pass",
+          "observed": [
+            0,
+            2
+          ]
+        },
+        {
+          "check": "no_claim_of_automatic_substantive_selection",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Retain evidence for both mentions rather than silently discarding one.",
+          "Distinguish the introductory roadmap on page 1 from the essential comparison on page 3.",
+          "Do not force Figure 1 onto page 1 simply because its name appears there first."
+        ],
+        "forbidden_claims_from_gold": [
+          "A lexical first-mention metric is equivalent to semantic reading difficulty."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/05_reference_roles/report.json"
+    },
+    {
+      "case_id": "06_two_columns",
+      "fixture_sha256": "d90fb8f1602710d66bdd2768c9f0986ee69cb06fb97a7d52522c1ed18370b8e0",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/06_two_columns.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/06_two_columns"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 1
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "same_page_gap_zero",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_invented_column_reading_distance",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Inspect column reading order; left-bottom to right-top may be an adjacent reading transition.",
+          "Keep same-page geometry separate from a claim of true reading-path distance.",
+          "Do not sort lines globally by y position and claim this reflects column order."
+        ],
+        "forbidden_claims_from_gold": [
+          "Same page always means easy to find.",
+          "The vertical distance across columns is a validated reading-cost measure."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/06_two_columns/report.json"
+    },
+    {
+      "case_id": "07_caption_prose_ambiguity",
+      "fixture_sha256": "0b0172bbb40fcca81b5b197952d419f47b2b70516beff6e42f7fbd2dfa6b2011",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/07_caption_prose_ambiguity.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/07_caption_prose_ambiguity"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 1
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "one_caption_per_distinct_object_kind",
+          "status": "pass",
+          "observed": [
+            [
+              "figure",
+              "1"
+            ],
+            [
+              "table",
+              "1"
+            ]
+          ]
+        },
+        {
+          "check": "sentence_beginning_figure_is_body_reference",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "figure_and_table_reference_identities_separate",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Do not classify the full body paragraph beginning 'Figure 1 shows' as a second figure caption.",
+          "Preserve separate figure and table identities.",
+          "If caption ambiguity remains, report that uncertainty for visual confirmation."
+        ],
+        "forbidden_claims_from_gold": [
+          "Duplicate captions proven by a mere Figure-number prefix.",
+          "Table 1 and Figure 1 identify the same object."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/07_caption_prose_ambiguity/report.json"
+    },
+    {
+      "case_id": "08_supplementary_panels",
+      "fixture_sha256": "a0293e82964a5bb806817bde5c0b7cc295a7dd03d4e5e6faeb57bd618cc079f4",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/08_supplementary_panels.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/08_supplementary_panels"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 1
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "supplementary_identity_preserved",
+          "status": "pass",
+          "observed": [
+            "S1"
+          ]
+        },
+        {
+          "check": "both_panel_references_retained",
+          "status": "pass",
+          "observed": [
+            [
+              "S1",
+              "a"
+            ],
+            [
+              "S1",
+              "b"
+            ]
+          ]
+        },
+        {
+          "check": "panel_refs_resolve_to_shared_figure",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Keep supplementary Figure S1 distinct from main-text Figure 1.",
+          "Associate panel a and panel b references with the same numbered figure, preserving panel specificity.",
+          "Fallback to manual verification when parsing panel syntax is unsupported."
+        ],
+        "forbidden_claims_from_gold": [
+          "Both panel references are broken simply because their spelling differs from the caption.",
+          "Panel a and panel b are duplicate numbered captions."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review."
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/08_supplementary_panels/report.json"
+    },
+    {
+      "case_id": "09_typography_and_blank",
+      "fixture_sha256": "788a2d2a1370e6fe82ed674a3907b01e851e575fbbb9a6ce2d45f6f24dbe13e3",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/09_typography_and_blank.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/09_typography_and_blank"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 4
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "tiny_body_flagged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "normal_footnote_not_flagged_as_tiny_body",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "off_crop_geometry_flagged_for_visual_review",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "intentional_blank_page_recorded_as_empty",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Distinguish the brief 8-point footnote from substantive 5-point body text.",
+          "Visually identify overlapping body lines and clipped text on page 2.",
+          "Record page 3 as blank, then apply the explicit spread-opening exception rather than deleting it.",
+          "Do not promise complete clipping detection from extracted text: off-crop glyphs can be absent from extraction."
+        ],
+        "forbidden_claims_from_gold": [
+          "Any font smaller than the median is an error.",
+          "Every blank page must be deleted.",
+          "No clipping exists because extracted bounding boxes are within the crop box."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review.",
+        "specific_unscored_observations": [
+          "Overlapping body baselines on page 2 need visual confirmation; this runner does not infer an automatic pass.",
+          "Page 3's spread-opening exception is declared on page 4; only an agent/human semantic review applies it."
+        ]
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/09_typography_and_blank/report.json"
+    },
+    {
+      "case_id": "10_image_only",
+      "fixture_sha256": "cf941991d0ffb9db618e6405bafcf795e34614e22e0c1f7d3f6db59414ad6108",
+      "command": [
+        "/usr/local/bin/python3",
+        "<workspace>/work/paper-layout-audit/scripts/audit_pdf.py",
+        "<workspace>/work/paper-layout-audit/tests/generated/10_image_only.pdf",
+        "--out",
+        "<workspace>/work/paper-layout-audit/tests/generated/runs/10_image_only"
+      ],
+      "exit_code": 0,
+      "automatic_checks": [
+        {
+          "check": "auditor_completed",
+          "status": "pass",
+          "observed": ""
+        },
+        {
+          "check": "input_bytes_unchanged",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "physical_page_count_matches_gold",
+          "status": "pass",
+          "observed": 1
+        },
+        {
+          "check": "global_status_does_not_claim_pass",
+          "status": "pass",
+          "observed": "review_required"
+        },
+        {
+          "check": "zero_findings_does_not_imply_pass",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "no_automatic_repairs_claimed",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "coverage_declares_first_substantive_reference_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_same_page_reading_distance_and_columns_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_figure_bounds_and_graphic_content_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "coverage_declares_tables_equations_and_typographic_details_unverified",
+          "status": "pass",
+          "observed": "not_checked"
+        },
+        {
+          "check": "text_unavailable_recorded",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "unsearchable_page_explicit_in_coverage",
+          "status": "pass",
+          "observed": null
+        },
+        {
+          "check": "visible_image_recorded",
+          "status": "pass",
+          "observed": null
+        }
+      ],
+      "manual_review": {
+        "status": "not_assessed_by_this_runner",
+        "required_behaviors_from_gold": [
+          "Mark text-based figure matching and font checks unavailable until OCR or visual review.",
+          "Render the page and inspect visible content; do not issue a fully verified pass."
+        ],
+        "forbidden_claims_from_gold": [
+          "The page has no captions or references.",
+          "All checks passed because no text-level violations were detected."
+        ],
+        "note": "A human or agent must inspect renders, contextual intent and the actual final written review.",
+        "specific_unscored_observations": [
+          "A visible figure and body reference exist; an empty parsed list does not establish their absence.",
+          "OCR/visual inspection, font readability and semantic proximity are still required."
+        ]
+      },
+      "report_path": "<workspace>/work/paper-layout-audit/tests/generated/runs/10_image_only/report.json"
+    }
+  ],
+  "summary": {
+    "cases_run": 10,
+    "automatic_invariants": 136,
+    "automatic_invariants_passed": 136,
+    "automatic_invariants_failed": 0,
+    "semantic_or_visual_gold_behaviors_scored": 0,
+    "cases_requiring_manual_review": 10,
+    "production_accuracy_established": false
+  }
+}
