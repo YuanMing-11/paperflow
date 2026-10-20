@@ -1,0 +1,4 @@
+interface:
+  display_name: "PaperFlow"
+  short_description: "Check reading flow, figure proximity and document layout"
+  default_prompt: "Use $paperflow to inspect this paper's rendered layout, prioritize reading problems, and verify any requested repairs."
