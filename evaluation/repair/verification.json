@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "paragraph_strings_exactly_preserved": true,
+    "paragraph_text_present_in_both_pdfs": true,
+    "chart_function_ast_identical": true,
+    "pdf_vectors_identical_up_to_translation": true,
+    "pdf_text_spans_and_font_sizes_identical": true,
+    "pdf_text_token_multiset_identical": true,
+    "page_dimensions_unchanged": true
+  },
+  "all_automated_preservation_checks_pass": true,
+  "paragraph_count": 8,
+  "vector_path_count": 10,
+  "vector_translation_pt": [
+    0.0,
+    144.0
+  ],
+  "page_count": {
+    "before": 3,
+    "after": 1
+  },
+  "hashes_sha256": {
+    "before.pdf": "459d06e5fa0418eb7d1b7c0d0188f410cdbd1d24a95333111af0719fc33f57e3",
+    "after.pdf": "752ad057fc2b4a86a40f12ab756df1d80955f9d20864634b394566f0cf4da68d",
+    "source-before.py": "d47d0e8b8a1c4af3fb4a0279dc35bae020f91f1e5a080a794b7bb21c24da54a6",
+    "source.py": "7a59f7a27fc9d2feec4331a602fcde98e2485c020faa9dc3b82d42b226ca6d44"
+  },
+  "limits": [
+    "Automated comparisons do not replace rendered-page inspection.",
+    "The paragraph order changes because the complete figure/caption block moves.",
+    "No independent scientific-claim or accessibility-conformance assessment."
+  ]
+}
