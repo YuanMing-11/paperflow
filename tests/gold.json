@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "purpose": "Independent behavioral fixtures; no production auditor implementation was read.",
+  "scoring": {
+    "unit": "case plus expected behavior",
+    "automatic_metrics": "Only facts the selected extraction/render method can actually observe.",
+    "human_review": "Semantic roles, venue exceptions, and final visual quality require independent assessment.",
+    "no_claim": "This is a small synthetic suite, not a validated measure of reader performance or production recall."
+  },
+  "cases": [
+    {
+      "id": "01_near_vector",
+      "file": "01_near_vector.pdf",
+      "observable_facts": {
+        "pages": 1,
+        "figure_1_caption_page": 1,
+        "substantive_ref_pages": [
+          1
+        ],
+        "raster_images": 0,
+        "vector_chart": true
+      },
+      "expected_review_behavior": [
+        "Recognize a real Figure 1 although no embedded raster image exists.",
+        "Do not flag its citation as remotely placed; inspect the nearby vector plot and caption."
+      ],
+      "must_not_claim": [
+        "Raster-image count of zero means the document has no figure.",
+        "The chart is scientifically correct because its layout is readable."
+      ]
+    },
+    {
+      "id": "02_far_essential",
+      "file": "02_far_essential.pdf",
+      "observable_facts": {
+        "pages": 4,
+        "figure_1_caption_page": 4,
+        "substantive_ref_pages": [
+          1
+        ],
+        "physical_page_gap": 3,
+        "end_matter_policy": false
+      },
+      "expected_review_behavior": [
+        "Report Figure 1 at physical page 4 and its essential interpreting paragraph at physical page 1.",
+        "Treat three pages of navigation as a concrete locality review candidate; propose a nearby float only after checking constraints."
+      ],
+      "must_not_claim": [
+        "An arbitrary three-page threshold establishes measured reader confusion.",
+        "A source edit was performed when only the PDF was supplied."
+      ]
+    },
+    {
+      "id": "03_end_matter_exception",
+      "file": "03_end_matter_exception.pdf",
+      "observable_facts": {
+        "pages": 4,
+        "figure_1_caption_page": 4,
+        "substantive_ref_pages": [
+          1
+        ],
+        "physical_page_gap": 3,
+        "declared_policy_page": 1
+      },
+      "expected_review_behavior": [
+        "Expose the same measured gap as 02_far_essential.",
+        "Honor the explicit submission policy requiring end-matter figures; do not call this a mandatory placement violation.",
+        "A suggestion for an additional reading copy is permissible, but no forced relocation."
+      ],
+      "must_not_claim": [
+        "All figures farther than one page must be moved.",
+        "A manuscript-layout rule overrides a declared submission format."
+      ]
+    },
+    {
+      "id": "04_figure_directory",
+      "file": "04_figure_directory.pdf",
+      "observable_facts": {
+        "pages": 3,
+        "directory_page": 1,
+        "figure_1_caption_page": 3,
+        "first_body_ref_page": 3,
+        "directory_entry_mentions_figure_1": true
+      },
+      "expected_review_behavior": [
+        "Treat page 1 as a navigational list, not the first substantive reference.",
+        "Pair the actual chart caption on page 3 with nearby body prose on page 3.",
+        "If the extractor cannot disambiguate the list entry, mark it ambiguous rather than assert a two-page locality fault."
+      ],
+      "must_not_claim": [
+        "The list entry is definitely a second Figure 1 caption.",
+        "The first text match always defines the reference location."
+      ]
+    },
+    {
+      "id": "05_reference_roles",
+      "file": "05_reference_roles.pdf",
+      "observable_facts": {
+        "pages": 3,
+        "roadmap_ref_page": 1,
+        "essential_ref_page": 3,
+        "figure_1_caption_page": 3,
+        "lexical_first_page_gap": 2,
+        "substantive_page_gap": 0
+      },
+      "expected_review_behavior": [
+        "Retain evidence for both mentions rather than silently discarding one.",
+        "Distinguish the introductory roadmap on page 1 from the essential comparison on page 3.",
+        "Do not force Figure 1 onto page 1 simply because its name appears there first."
+      ],
+      "must_not_claim": [
+        "A lexical first-mention metric is equivalent to semantic reading difficulty."
+      ]
+    },
+    {
+      "id": "06_two_columns",
+      "file": "06_two_columns.pdf",
+      "observable_facts": {
+        "pages": 1,
+        "columns": 2,
+        "reference_position": "left column near bottom",
+        "figure_position": "right column near top",
+        "physical_page_gap": 0
+      },
+      "expected_review_behavior": [
+        "Inspect column reading order; left-bottom to right-top may be an adjacent reading transition.",
+        "Keep same-page geometry separate from a claim of true reading-path distance.",
+        "Do not sort lines globally by y position and claim this reflects column order."
+      ],
+      "must_not_claim": [
+        "Same page always means easy to find.",
+        "The vertical distance across columns is a validated reading-cost measure."
+      ]
+    },
+    {
+      "id": "07_caption_prose_ambiguity",
+      "file": "07_caption_prose_ambiguity.pdf",
+      "observable_facts": {
+        "pages": 1,
+        "true_figure_captions": [
+          "Figure 1."
+        ],
+        "true_table_captions": [
+          "Table 1."
+        ],
+        "body_sentence_start": "Figure 1 shows the response",
+        "actual_figures": 1,
+        "actual_tables": 1
+      },
+      "expected_review_behavior": [
+        "Do not classify the full body paragraph beginning 'Figure 1 shows' as a second figure caption.",
+        "Preserve separate figure and table identities.",
+        "If caption ambiguity remains, report that uncertainty for visual confirmation."
+      ],
+      "must_not_claim": [
+        "Duplicate captions proven by a mere Figure-number prefix.",
+        "Table 1 and Figure 1 identify the same object."
+      ]
+    },
+    {
+      "id": "08_supplementary_panels",
+      "file": "08_supplementary_panels.pdf",
+      "observable_facts": {
+        "pages": 1,
+        "true_figure_captions": [
+          "Figure S1."
+        ],
+        "panel_refs": [
+          "Figure S1a",
+          "Fig. S1(b)"
+        ],
+        "unrelated_figure_1": false,
+        "vector_chart_panels": 2
+      },
+      "expected_review_behavior": [
+        "Keep supplementary Figure S1 distinct from main-text Figure 1.",
+        "Associate panel a and panel b references with the same numbered figure, preserving panel specificity.",
+        "Fallback to manual verification when parsing panel syntax is unsupported."
+      ],
+      "must_not_claim": [
+        "Both panel references are broken simply because their spelling differs from the caption.",
+        "Panel a and panel b are duplicate numbered captions."
+      ]
+    },
+    {
+      "id": "09_typography_and_blank",
+      "file": "09_typography_and_blank.pdf",
+      "observable_facts": {
+        "pages": 4,
+        "normal_body_pt": 11,
+        "normal_footnote_pt": 8,
+        "bad_body_page": 2,
+        "bad_body_pt": 5,
+        "overlapping_lines_page": 2,
+        "off_crop_text_page": 2,
+        "blank_page": 3,
+        "blank_page_policy_page": 4
+      },
+      "expected_review_behavior": [
+        "Distinguish the brief 8-point footnote from substantive 5-point body text.",
+        "Visually identify overlapping body lines and clipped text on page 2.",
+        "Record page 3 as blank, then apply the explicit spread-opening exception rather than deleting it.",
+        "Do not promise complete clipping detection from extracted text: off-crop glyphs can be absent from extraction."
+      ],
+      "must_not_claim": [
+        "Any font smaller than the median is an error.",
+        "Every blank page must be deleted.",
+        "No clipping exists because extracted bounding boxes are within the crop box."
+      ]
+    },
+    {
+      "id": "10_image_only",
+      "file": "10_image_only.pdf",
+      "observable_facts": {
+        "pages": 1,
+        "extractable_text_characters": 0,
+        "raster_page_images": 1,
+        "visible_figure_1": true,
+        "visible_ref_page": 1
+      },
+      "expected_review_behavior": [
+        "Mark text-based figure matching and font checks unavailable until OCR or visual review.",
+        "Render the page and inspect visible content; do not issue a fully verified pass."
+      ],
+      "must_not_claim": [
+        "The page has no captions or references.",
+        "All checks passed because no text-level violations were detected."
+      ]
+    }
+  ],
+  "real_document_candidate": {
+    "title": "Connecting the Dots: Surfacing Structure in Documents through AI-Generated Cross-Modal Links",
+    "submitted": "2026-02-18",
+    "primary_url": "https://arxiv.org/abs/2602.16895",
+    "pdf_url": "https://arxiv.org/pdf/2602.16895",
+    "version": "v1",
+    "rationale": "40 pages, 16 figures; a real mixed-layout stress test and primary study of cross-modal navigation.",
+    "caution": "Suitability as a test document does not certify this paper's own layout as an optimum."
+  }
+}
