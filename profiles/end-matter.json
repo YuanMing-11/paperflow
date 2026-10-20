@@ -1,0 +1,10 @@
+{
+  "float_policy": "end_matter",
+  "far_reference_page_gap": 2,
+  "minimum_font_pt": 7,
+  "minimum_body_font_ratio": 0.65,
+  "sparse_page_max_occupied_fraction": 0.12,
+  "page_edge_tolerance_pt": 0.5,
+  "render_dpi": 110,
+  "exempt_pages": []
+}
