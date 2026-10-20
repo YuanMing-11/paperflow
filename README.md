@@ -6,6 +6,10 @@ Academic Layout Review & Refinement
 
 PaperFlow 是面向论文与长文档的 agent skill。检查图文位置、页面布局和可读性；结合源文件修复，并重新渲染确认效果。
 
+![PaperFlow 综合排版示例：优化图文距离、标题分页、图表可读性、表格对齐、公式折行、图注和交叉引用](assets/layout-before-after.png)
+
+同一篇合成示例，展示七类排版优化。查看完整 [优化前 PDF](examples/layout-showcase/before.pdf) · [优化后 PDF](examples/layout-showcase/after.pdf) · [示例源码](examples/layout-showcase/generate.py)。
+
 ## 它会检查什么
 
 | 范围 | 重点 |
